@@ -5,8 +5,8 @@ To get started:
 1. Clone the repo and create a new branch
 
 ```bash
-git clone https://github.com/Uzo2005/Budgetify.git/
-cd Budgetify
+git clone https://github.com/donjne/Ledgar.git/
+cd Ledgar
 git branch  <name-of-your-dev-branch> #create new branch
 git checkout <name-of-your-dev-branch> #checkout the new branch
 ```
