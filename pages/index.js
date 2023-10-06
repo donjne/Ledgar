@@ -48,7 +48,7 @@ export default function IndexPage() {
         {/* <img className="absolute top-0 left-0" src="circle1.svg" alt="circle" /> */}
         <div className="flex flex-col md:flec-row justify-between items-center pb-10 pt-4">
         <div>
-          <img src="asset.png" className="my-10 w-1/2 mx-auto"/>
+          <img src="asset.png" className="my-10 w-1/3 mx-auto"/>
           </div>
           {/* <img src="navbar.png" alt="logo" className='w-20 h-20'/><span className="font-bold text-3xl font-grotesk flex justify-center items-center mt-4 mb-9" style={{
   background: "linear-gradient(to right, purple, red)",
@@ -77,8 +77,8 @@ export default function IndexPage() {
             <p className="text-purple-500 font-bold text-3xl md:text-7xl capitalize items-">
               Track <br />  Save<br /> Manage
             </p>
-            <p className="text-white text-sm ">
-              The ultimate finance management platform.
+            <p className="text-gray-500 text-sm ">
+              Through our services you can easily track and manage expenses <br /> in your bank account and crypto wallet.
             </p>
             <div className="flex gap-2">
             <a href="/api/auth/signin">
@@ -137,7 +137,7 @@ export default function IndexPage() {
   </div>
   <p className="text-white text-xl mt-2 mb-4 flex justify-center">Create an Account</p>
   <p className="text-gray-500 flex justify-center">
-    Sign up for an account on our platform. It's quick and easy!
+    {/* Sign up for an account on our platform. It's quick and easy! */}
   </p>
 </div>
 
@@ -150,7 +150,7 @@ export default function IndexPage() {
     </div>
     <p className="text-white text-xl text-center mt-2 mb-4">Manually Track Budgets</p>
     <p className="text-gray-500 text-center">
-      Browse through a wide selection of unique NFTs in various categories.
+      {/* Browse through a wide selection of unique NFTs in various categories. */}
     </p>
   </div>
   <div>
@@ -159,9 +159,9 @@ export default function IndexPage() {
         <i className="fas fa-credit-card"></i>
       </span>
     </div>
-    <p className="text-white text-xl text-center mt-2 mb-4">Link a Card - Automatic</p>
+    <p className="text-white text-xl text-center mt-2 mb-4">Link a Card/Wallets</p>
     <p className="text-gray-500 text-center">
-      Purchase your favorite NFTs or list your own creations for sale.
+      {/* Purchase your favorite NFTs or list your own creations for sale. */}
     </p>
   </div>
 
@@ -174,7 +174,7 @@ export default function IndexPage() {
     </div>
     <p className="text-white text-xl text-center mt-2 mb-4">Enjoy Financial Accountability</p>
     <p className="text-gray-500 text-center">
-      Start building your unique NFT collection and enjoy the benefits of ownership.
+      {/* Start building your unique NFT collection and enjoy the benefits of ownership. */}
     </p>
   </div>
       </div>
@@ -232,7 +232,7 @@ export default function IndexPage() {
         <i className="fab fa-instagram text-white text-2xl mx-2"></i>
       </a>
     </div>
-    <p>&copy; 2023 Budgetify. All rights reserved.</p>
+    <p>&copy; 2023 Ledgar. All rights reserved.</p>
   </div>
 </footer>
     </div>

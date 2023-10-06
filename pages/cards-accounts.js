@@ -16,6 +16,7 @@ import Budgets from "../components/BudgetsList";
 import Archives from "../components/Archives";
 import OtherExpenses from "../components/OtherExpenses";
 import CardAccountLayout from "../components/CardAccountLayout";
+import WalletInput from "../components/WalletInput";
 
 export default function Home() {
   const [showSideSection, setShowSideSection] = useState(true);
@@ -60,9 +61,20 @@ export default function Home() {
   <div className="w-full col-span-full h-[12vh]">
     <TopBar toggleSideSection={toggleSideSection} />
   </div>
-    <div className="grid grid-cols-5">
+  <div
+            className={`col-span-5 h-[88vh] overflow-y-scroll myscrollbar bg-[#2b2b2b] text-white font-semibold items-center justify-center border-r border-l border-gray-500 ${
+              showSideSection ? "" : "col-start-1"
+            }`}
+          > 
+  <div className="grid grid-cols-5">
       <CardAccountLayout />
     </div>
+    </div>
+  <div className="p-0 bg-[#2b2b2b] h-[88vh] overflow-y-scroll myscrollbar col-span-5 ">
+    <div className="pl-6">
+      <WalletInput />
+    </div>
+  </div>
   </div>
       </main>
     </>
