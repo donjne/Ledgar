@@ -2,64 +2,102 @@ import { useState } from "react";
 import Head from "next/head";
 import DarkMode from "../components/DarkMode";
 import Logout from "../components/Logout";
-import Calendar from "../components/Calendar";
-import Budget from "../components/Budget";
-import Expenses from "../components/Expenses";
-import NewBudget from "../components/NewBudget";
 import NavMenu from "../components/NavItem";
 import TopBar from "../components/TopBar";
-import MainDashboard from "../components/MainDashboard";
-import { ExpensesButton, SavingsButton } from "../components/MiddleDashboard";
 import Link from "next/link";
-import RecentTransactions from "../components/RecentTransactions";
-import Budgets from "../components/BudgetsList";
-import Archives from "../components/Archives";
-import OtherExpenses from "../components/OtherExpenses";
+import ProfileSettings from "../components/AccountInfo";
+import FinancialSettings from "../components/TransactionSettings";
 
 export default function Home() {
   const [showSideSection, setShowSideSection] = useState(true);
+  const [activeTab, setActiveTab] = useState("profile");
 
   const toggleSideSection = () => {
     setShowSideSection(!showSideSection);
   };
 
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case "profile":
+        return <div className="h-full bg-[#2b2b2b] text-white">
+              <div>
+              <ProfileSettings />
+              </div>
+        </div>;
+      case "financial":
+        return <div className="h-full bg-[#2b2b2b] text-white">
+        <div>
+        <FinancialSettings />
+        </div>
+  </div>;
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
       <Head>
-        <title>Budgetify</title>
-        <meta name="description" content="The Ultimate Finance Tracking App" />
+        <title>Ledgar</title>
+        <meta name="description" content="Ledgar is a platform that provides users with better financial insights, track cash in-flow and expenses and improve their budgeting and saving habits." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="grid grid-cols-5 h-screen w-screen">
+      <main className="h-screen w-screen flex">
         {/* Side Section */}
         <div
-          className={`bg-[#2b2b2b] p-4 border-r border-gray-500 col-span-1 myscrollbar overflow-y-scroll ${
+          className={`bg-[#2b2b2b] p-4 border-r border-gray-500 col-span-2 myscrollbar overflow-y-scroll ${
             showSideSection ? "" : "hidden"
           }`}
+          style={{ width: "30%" }}
         >
-          <Link href='/'>
-          <img src="asset.png" className="my-10 w-1/2 mx-auto cursor-pointer"/>
+          <Link href="/">
+            <img
+              src="asset.png"
+              className="my-10 w-1/2 mx-auto cursor-pointer"
+            />
           </Link>
           <NavMenu />
           <div className="text-1xl text-white p-5 mt-4">
             <DarkMode />
           </div>
-          <div className="flex bg-[#268bdd] h-[50px] p-5 rounded-md justify-between items-center">
+          <div className="flex bg-[#268bdd] p-5 rounded-md justify-between items-center">
             <Logout />
           </div>
         </div>
 
         {/* Main Dashboard Section */}
-        <div
-          className={`col-span-4 grid grid-cols-10 ${
-            showSideSection ? "" : "col-span-6"
-          }`}
-        >
-          <div className="w-full col-span-full h-[12vh]">
-            <TopBar toggleSideSection={toggleSideSection} />
+        <div className="w-full flex flex-col myscrollbar overflow-y-scroll">
+          {/* Top Bar */}
+          <TopBar toggleSideSection={toggleSideSection} />
+
+          {/* Tabs */}
+          <div className="flex justify-around items-center bg-[#2b2b2b] text-white">
+            <div
+              className={`cursor-pointer py-2 px-4 ${
+                activeTab === "profile" ? "bg-purple-600 rounded-md my-1" : ""
+              }`}
+              onClick={() => handleTabClick("profile")}
+            >
+              Profile
+            </div>
+            <div
+              className={`cursor-pointer p-2 ${
+                activeTab === "financial" ? "bg-purple-600 rounded-md my-1" : ""
+              }`}
+              onClick={() => handleTabClick("financial")}
+            >
+              Financial Information
+            </div>
           </div>
-      </div>   
+
+          {/* Tab Content */}
+          <div>{renderTabContent()}</div>
+        </div>
       </main>
     </>
   );

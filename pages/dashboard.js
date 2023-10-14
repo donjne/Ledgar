@@ -11,7 +11,6 @@ import TopBar from "../components/TopBar";
 import MainDashboard from "../components/MainDashboard";
 import { ExpensesButton, SavingsButton } from "../components/MiddleDashboard";
 import Link from "next/link";
-import RecentTransactions from "../components/RecentTransactions";
 import Archives from "../components/Archives";
 import OtherExpenses from "../components/OtherExpenses";
 import ParentComponent from "../components/ParentComponent";
@@ -27,7 +26,7 @@ export default function Home() {
     <>
       <Head>
         <title>Ledgar</title>
-        <meta name="description" content="The Ultimate Finance Tracking App" />
+        <meta name="description" content="Ledgar is a platform that provides users with better financial insights, track cash in-flow and expenses and improve their budgeting and saving habits." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -74,8 +73,8 @@ export default function Home() {
               </h2>
             </div>
             <ExpensesButton />
-            <h2 className="flex p-5 text-2xl">Recent Transactions</h2>
-            <RecentTransactions />
+            <h2 className="flex p-5 text-2xl">All Transactions</h2>
+            <h2 className="flex p-5 text-2xl">All Budgets</h2>
             <Archives />
           </div>
 

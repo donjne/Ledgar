@@ -51,7 +51,7 @@ const OtherExpenses = () => {
     <div>
       <ul>
         {expenses.map((expense) => (
-          <li key={expense.id} className="flex items-center rounded-md p-3 hover:bg-[#E57ACD] m-2 justify-between">
+          <li key={expense.id} className="flex items-center rounded-md p-3 hover:bg-[#268bdd] m-2 justify-between">
             <div>
               <span>{expense.name}</span>
               <span className="font-semibold ml-5 text-gray-500">NGN {expense.amount}</span>

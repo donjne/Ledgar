@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import RecentTransactions from "./RecentTransactions";
 
 const CryptoWallet = () => {
   const [walletAddress, setWalletAddress] = useState("");
@@ -30,12 +31,9 @@ const CryptoWallet = () => {
     <div className="p-0 bg-[#2b2b2b] h-[88vh] overflow-y-scroll myscrollbar col-span-5">
       <h2 className="text-white text-2xl font-semibold">Crypto Wallet</h2>
       <div className="mt-4">
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-          Link
-        </button>
         <input
           type="text"
-          className="ml-4 border rounded-md px-2 py-1 outline-none"
+          className="border rounded-md px-2 py-1 outline-none"
           placeholder="Enter Crypto Wallet"
           value={walletAddress}
           onChange={handleInputChange}
@@ -44,15 +42,16 @@ const CryptoWallet = () => {
       </div>
       <button
         onClick={handleSubmit}
-        className="mt-4 bg-[#00A3FF] text-white px-4 py-2 rounded-md"
+        className="mt-4 bg-[#268bdd] text-white px-4 py-2 rounded-md mb-12"
       >
-        Submit
+        Link
       </button>
+      <RecentTransactions walletAddress={walletAddress} /> {/* Pass walletAddress as a prop */}
       {addresses.length > 0 && (
         <div className="mt-4 text-white">
           {addresses.map(({ id, address }) => (
             <div key={id} className="mb-2">
-              <p>You're Solana wallet address is: {address}</p>
+              <p>You have added the address: {address}</p>
               <button
                 onClick={() => handleRemove(id)}
                 className="text-red-500 mt-1"

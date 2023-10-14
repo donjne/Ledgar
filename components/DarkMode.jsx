@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+// DarkMode.js
+import React from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 
 const DarkMode = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { mode, toggleMode } = useTheme();
+
+  const buttonText = mode === "dark" ? "Dark Mode" : "Light Mode";
 
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    toggleMode();
   };
-
-  const buttonText = isDarkMode ? "Dark Mode" : "Light Mode";
 
   return (
     <div className="flex items-center cursor-pointer" onClick={toggleDarkMode}>
-      {isDarkMode ? (
+      {mode === "dark" ? (
         <FaMoon className="text-gray-500" />
       ) : (
         <FaSun className="text-yellow-500" />

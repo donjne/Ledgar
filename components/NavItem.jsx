@@ -19,26 +19,26 @@ const NavItem = ({ name, icon, onClick, isActive }) => {
   }
 
   return (
+    <Link href={route}>
     <li
       className={`w-full h-[50px] rounded-md hover:bg-[#268bdd] cursor-pointer mb-3 flex items-center pl-7 pt-5 pb-6 ${
         isActive ? "bg-[#268bdd] text-black" : "text-white"
       }`}
       onClick={onClick}
     >
-      <Link href={route}>
         <a>
           <div className="flex items-center">
             {icon && <span className="mr-2">{icon}</span>}
-            <span className="font-medium">{name}</span>
+            <span className="font-medium" onClick={onClick}>{name}</span>
           </div>
         </a>
-      </Link>
     </li>
+    </Link>
   );
 };
 
 const NavMenu = () => {
-  const [activeItem, setActiveItem] = useState("Dashboard");
+  const [activeItem, setActiveItem] = useState();
 
   const handleItemClick = (name) => {
     setActiveItem(name);

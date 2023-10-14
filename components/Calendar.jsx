@@ -15,7 +15,7 @@ const Calendar = () => {
           <div className="p-4 rounded-lg"><CustomCalendar onChange={handleDateChange} value={date} className="rounded-lg"/></div>
     </div>
   );
-};
+}
 
 export default Calendar;
 //remove flex later when calendar is implemented

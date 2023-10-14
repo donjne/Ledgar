@@ -192,22 +192,6 @@ const AddBudgetOverlay = () => {
               )}
             </div>
 
-                 {/* Link to an active budget */}
-                 <h3 className="text-xl mb-4">Link to an active budget</h3>
-            <select
-              className="border border-gray-300 rounded-md mb-4 px-3 py-2"
-              onChange={(e) => console.log(e.target.value)}
-              onFocus={fetchBudgetOptions}
-              required
-            >
-              <option value="">Select a budget</option>
-              {budgetOptions.map((option, index) => (
-                <option key={index} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-
             <h3 className="text-xl mb-4">Please specify an amount</h3>
             <span className="text-gray-500 mr-2 text-2xl">₦</span>
             <input

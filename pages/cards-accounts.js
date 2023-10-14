@@ -29,7 +29,7 @@ export default function Home() {
     <>
       <Head>
         <title>Ledgar</title>
-        <meta name="description" content="The Ultimate Finance Tracking App" />
+        <meta name="description" content="Ledgar is a platform that provides users with better financial insights, track cash in-flow and expenses and improve their budgeting and saving habits." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -66,11 +66,11 @@ export default function Home() {
               showSideSection ? "" : "col-start-1"
             }`}
           > 
-  <div className="grid grid-cols-5">
+  <div className="grid col-span-5 pt-3">
       <CardAccountLayout />
     </div>
     </div>
-  <div className="p-0 bg-[#2b2b2b] h-[88vh] overflow-y-scroll myscrollbar col-span-5 ">
+  <div className="p-0 bg-[#2b2b2b] h-[88vh] overflow-y-scroll myscrollbar col-span-5 pt-3">
     <div className="pl-6">
       <WalletInput />
     </div>

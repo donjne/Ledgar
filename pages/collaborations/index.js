@@ -22,36 +22,32 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="grid grid-cols-5 h-screen w-screen">
+      <main className="h-screen w-screen flex"> {/* Use flex to arrange side section and main content */}
         {/* Side Section */}
         <div
-          className={`bg-[#2b2b2b] p-4 border-r border-gray-500 col-span-1 myscrollbar overflow-y-scroll ${
+          className={`bg-[#2b2b2b] p-4 border-r border-gray-500 col-span-2 myscrollbar overflow-y-scroll ${
             showSideSection ? "" : "hidden"
           }`}
+          style={{ width:'30%'}}
         >
           <Link href='/'>
-          <img src="asset.png" className="my-10 w-1/2 mx-auto cursor-pointer"/>
+            <img src="asset.png" className="my-10 w-1/2 mx-auto cursor-pointer"/>
           </Link>
           <NavMenu />
           <div className="text-1xl text-white p-5 mt-4">
             <DarkMode />
           </div>
-          <div className="flex bg-[#268bdd] h-[50px] p-5 rounded-md justify-between items-center">
+          <div className="flex bg-[#268bdd] p-5 rounded-md justify-between items-center">
             <Logout />
           </div>
         </div>
 
         {/* Main Dashboard Section */}
-        <div
-          className={`col-span-4 grid grid-cols-10 bg-[#2b2b2b] ${
-            showSideSection ? "" : "col-span-6"
-          }`}
-        >
-          <div className="w-full col-span-full h-[12vh]">
-            <TopBar toggleSideSection={toggleSideSection} />
-            <CollaborationsTab />
-          </div>
-      </div>   
+        <div className="w-full flex flex-col h-11"> {/* Use flex to arrange top bar and main content */}
+          <TopBar toggleSideSection={toggleSideSection} />
+          <CollaborationsTab style={{ }} /> 
+          <div>yo</div>
+        </div>
       </main>
     </>
   );

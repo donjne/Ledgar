@@ -1,4 +1,5 @@
 import React from "react";
+import MyChart from "./Chart";
 
 const ExpensesButton = () => {
   const pieChartData = [
@@ -50,33 +51,17 @@ const ExpensesButton = () => {
 </div>
 
         <div className="flex justify-center bg-white">
-          <div className="pie-chart">
-            {/* Replace with your pie chart implementation */}
-            <svg width="200" height="200">
-              {/* Dummy chart */}
-              {pieChartData.map((data, index) => (
-                <circle
-                  key={index}
-                  cx="100"
-                  cy="100"
-                  r="80"
-                  fill={data.color}
-                  stroke="none"
-                  style={{ transform: `rotate(${data.angle}deg)` }}
-                />
-              ))}
-            </svg>
-          </div>
+        <MyChart /> {/* Replaced the pie chart with MyChart */}
         </div>
         <div className="flex justify-center mt-2">
           <div className="legend">
-            {pieChartData.map((data, index) => (
+            {pieChartData.map((datas, index) => (
               <div className="legend-item" key={index}>
                 <div
                   className="legend-color"
-                  style={{ backgroundColor: data.color }}
+                  style={{ backgroundColor: datas.color }}
                 ></div>
-                <span>{data.category}</span>
+                <span>{datas.category}</span>
               </div>
             ))}
           </div>
@@ -89,10 +74,10 @@ const ExpensesButton = () => {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((data, index) => (
+          {tableData.map((datas, index) => (
             <tr key={index}>
-              <td>{data.name}</td>
-              <td>{data.amount}</td>
+              <td>{datas.name}</td>
+              <td>{datas.amount}</td>
             </tr>
           ))}
         </tbody>

@@ -1,4 +1,4 @@
-### Budgetify (The Ultimate Finance Management App)
+### Ledgar (A Financial Management Service)
 
 To get started:
 
