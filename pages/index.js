@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { Link, Element } from 'react-scroll';
+import { Element } from 'react-scroll';
+import Link from 'next/link';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import FAQs from '../components/Landing Page/FAQs';
 
@@ -10,25 +11,6 @@ export default function IndexPage() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Ledgar</title>
-        <link rel="icon" type="x-icon" href="favicon.ico" />
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://cdn.jsdelivr.net/npm/daisyui@2.43.2/dist/full.css"
-          rel="stylesheet"
-          type="text/css"
-        />
         <style>
           {`
           html {
@@ -36,11 +18,6 @@ export default function IndexPage() {
           }
           `}
         </style>
-        <script src="https://cdn.tailwindcss.com" />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css"
-        />
       </Head>
 
       {/* Navbar */}
@@ -48,7 +25,7 @@ export default function IndexPage() {
         {/* <img className="absolute top-0 left-0" src="circle1.svg" alt="circle" /> */}
         <div className="flex flex-col md:flec-row justify-between items-center pb-10 pt-4">
         <div>
-          <img src="asset.png" className="my-10 w-1/3 mx-auto"/>
+          <img src="asset.png" alt='logo' className="my-10 w-1/3 mx-auto"/>
           </div>
           {/* <img src="navbar.png" alt="logo" className='w-20 h-20'/><span className="font-bold text-3xl font-grotesk flex justify-center items-center mt-4 mb-9" style={{
   background: "linear-gradient(to right, purple, red)",
@@ -81,9 +58,9 @@ export default function IndexPage() {
               Through our services you can easily track and manage expenses <br /> in your bank account and crypto wallet.
             </p>
             <div className="flex gap-2">
-            <a href="/dashboard">
+            <Link href="/dashboard">
             <button className="bg-blue-300 text-black font-semibold py-3 px-5 rounded-lg">Sign In</button>
-           </a> 
+           </Link> 
            </div>
           </div>
           <div>

@@ -4,8 +4,6 @@ import DarkMode from "../components/DarkMode";
 import Logout from "../components/Logout";
 import Calendar from "../components/Calendar";
 import Budget from "../components/Budget";
-import Expenses from "../components/Expenses";
-import NewBudget from "../components/NewBudget";
 import NavMenu from "../components/NavItem";
 import TopBar from "../components/TopBar";
 import MainDashboard from "../components/MainDashboard";
@@ -38,7 +36,7 @@ export default function Home() {
           }`}
         >
           <Link href='/'>
-          <img src="asset.png" className="my-10 w-1/2 mx-auto cursor-pointer"/>
+          <img src="asset.png" alt="logo" className="my-10 w-1/2 mx-auto cursor-pointer"/>
           </Link>
           <NavMenu />
           <div className="text-1xl text-white p-5 mt-4">

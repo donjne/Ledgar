@@ -31,7 +31,7 @@ export default function Home() {
           style={{ width:'30%'}}
         >
           <Link href='/'>
-            <img src="asset.png" className="my-10 w-1/2 mx-auto cursor-pointer"/>
+            <img src="asset.png" alt="logo" className="my-10 w-1/2 mx-auto cursor-pointer"/>
           </Link>
           <NavMenu />
           <div className="text-1xl text-white p-5 mt-4">

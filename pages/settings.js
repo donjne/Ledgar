@@ -59,6 +59,7 @@ export default function Home() {
             <img
               src="asset.png"
               className="my-10 w-1/2 mx-auto cursor-pointer"
+              alt="logo"
             />
           </Link>
           <NavMenu />
