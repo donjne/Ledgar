@@ -3,9 +3,9 @@ import MyChart from "./Chart";
 
 const ExpensesButton = () => {
   const pieChartData = [
-    { category: "Category 1", value: 40 },
-    { category: "Category 2", value: 30 },
-    { category: "Category 3", value: 20 },
+    { category: "Food", value: 40 },
+    { category: "Transportation", value: 30 },
+    { category: "Books", value: 20 },
     // Add more data as needed
   ];
 
@@ -53,7 +53,7 @@ const ExpensesButton = () => {
         <div className="flex justify-center bg-white">
         <MyChart /> {/* Replaced the pie chart with MyChart */}
         </div>
-        <div className="flex justify-center mt-2">
+        <div className="flex justify-center mt-2 text-center">
           <div className="legend">
             {pieChartData.map((datas, index) => (
               <div className="legend-item" key={index}>
@@ -61,7 +61,7 @@ const ExpensesButton = () => {
                   className="legend-color"
                   style={{ backgroundColor: datas.color }}
                 ></div>
-                <span>{datas.category}</span>
+                <span className="text-center">{datas.category}</span>
               </div>
             ))}
           </div>

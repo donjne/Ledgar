@@ -81,7 +81,7 @@ export default function IndexPage() {
               Through our services you can easily track and manage expenses <br /> in your bank account and crypto wallet.
             </p>
             <div className="flex gap-2">
-            <a href="/api/auth/signin">
+            <a href="/dashboard">
             <button className="bg-blue-300 text-black font-semibold py-3 px-5 rounded-lg">Sign In</button>
            </a> 
            </div>
